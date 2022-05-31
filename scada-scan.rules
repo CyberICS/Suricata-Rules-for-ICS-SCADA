@@ -1,0 +1,18 @@
+alert tcp any any -> any 502 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Modbus banner grab like msfconsole (scanner/scada/modbus_banner_grabbing)"; content:"|44 62 00 00 00 05 ff 2b 0e 03 00|"; classtype:bad-unknown; rev:2; sid:101563261;)
+
+alert tcp any any -> any 502 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Modbus detect like msfconsole (scanner/scada/modbusdetect)"; content:"|21 00 00 00 00 06 01 04 00 01 00 00|"; classtype:bad-unknown; rev:2; sid:101563260;)
+
+alert tcp any any -> any 502 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Modbus scan looking like Zgrab2 (https://github.com/zmap/zgrab2)"; content:"|5a 47 00 00 00 05 00 2b 0e 01 00|"; classtype:bad-unknown; rev:1; sid:101563262;)
+
+alert tcp any any -> any 502 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Modbus scan looking like nmap (nmap --script modbus-discover.nse -p 502 <host>)"; content:"|00 00 00 00 00 02 01 11|"; classtype:bad-unknown; rev:1; sid:101563263;)
+alert tcp any any -> any 502 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Modbus scan looking like nmap (nmap --script modbus-discover.nse -p 502 <host>)"; content:"|00 00 00 00 00 05 01 2b 0e 01 00|"; classtype:bad-unknown; rev:2; sid:101563264;)
+
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Application software version (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 0c|"; classtype:bad-unknown; rev:2; sid:101563265;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Description (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 1c|"; classtype:bad-unknown; rev:2; sid:101563266;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Firmware-revision (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 2c|"; classtype:bad-unknown; rev:2; sid:101563267;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Location (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 3a|"; classtype:bad-unknown; rev:2; sid:101563268;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Model-name (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 46|"; classtype:bad-unknown; rev:2; sid:101563269;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Object Identifier (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 4b|"; classtype:bad-unknown; rev:2; sid:101563270;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Object-name (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 4d|"; classtype:bad-unknown; rev:2; sid:101563271;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Vendor-Identifier (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 78|"; classtype:bad-unknown; rev:2; sid:101563272;)
+alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Vendor-Name (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 79|"; classtype:bad-unknown; rev:2; sid:101563273;)
