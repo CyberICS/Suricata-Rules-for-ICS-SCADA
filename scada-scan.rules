@@ -16,3 +16,6 @@ alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan
 alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Object-name (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 4d|"; classtype:bad-unknown; rev:2; sid:101563271;)
 alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Vendor-Identifier (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 78|"; classtype:bad-unknown; rev:2; sid:101563272;)
 alert udp any any -> any 47808 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Bacnet scan looking like nmap / Vendor-Name (nmap --script bacnet-info -sU -47808 <host>)"; content:"|81 0a 00 11 01 04 00 05 01 0c 0c 02 3f ff ff 19 79|"; classtype:bad-unknown; rev:2; sid:101563273;)
+
+alert tcp any any -> any 1911 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Fox scan looking like nmap"; content:"{|0a|fox.version=s:1.0|0a|id=i:1|0a|}"; classtype:bad-unknown; rev:2; sid:101563274;)
+alert tcp any any -> any 1962 (msg:"CYBER-SEC-ICS POLICY SCADA-SCAN Pcworx scan looking like nmap"; content:"|01 06 00 0e 00 02 00 00 00 00 00 4b 04 00|"; classtype:bad-unknown; rev:2; sid:101563275;)
